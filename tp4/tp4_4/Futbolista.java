@@ -12,5 +12,17 @@ public class Futbolista extends Integrante {
         this.zurdo = zurdo;
         this.cantGoles = cantGoles;
     }
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public boolean isZurdo() {
+        return zurdo;
+    }
+
+    public int getCantGoles() {
+        return cantGoles;
+    }
     
 }

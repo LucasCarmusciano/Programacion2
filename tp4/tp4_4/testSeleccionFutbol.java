@@ -10,5 +10,6 @@ public class testSeleccionFutbol {
         System.out.println(f1);
         f1.setEstado(epo);
         System.out.println(f1);
+        f1.setEstado(ev);
     }
 }
