@@ -1,4 +1,4 @@
-package Programacion2.tp4.tp4_3;
+package tp4.tp4_3;
 
 public class EmpleadoContratado extends Empleado{
     public EmpleadoContratado(float salarioFijo, String nombre){

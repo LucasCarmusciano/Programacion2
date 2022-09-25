@@ -1,4 +1,4 @@
-package Programacion2.tp4.tp4_3;
+package tp4.tp4_3;
 
 public class testEmpleados {
     public static void main(String[] args) {

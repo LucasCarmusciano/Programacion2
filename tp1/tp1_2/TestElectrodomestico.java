@@ -1,4 +1,5 @@
 package tp1.tp1_2;
+
 public class TestElectrodomestico {
     public static void main(String[] args){
         Electrodomestico e1 = new Electrodomestico("winky",150,"violeta",340,544);
