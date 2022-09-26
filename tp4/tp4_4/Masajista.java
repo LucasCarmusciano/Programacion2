@@ -9,4 +9,10 @@ public class Masajista extends Integrante {
         this.titulo = titulo;
         this.cantAnios = cantAnios;
     }
+    public String getTitulo() {
+        return titulo;
+    }
+    public int getCantAnios() {
+        return cantAnios;
+    }
 }
