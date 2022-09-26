@@ -9,9 +9,11 @@ public abstract class Productos {
         this.numLote = numLote;
     }
 
-    public abstract void getInformacion();
+    public void getInformacion(){
+        System.out.println(this);
+    }
 
     public String toString(){
-        return "fecha de vencimiento: "+fechaVencimiento+"\n num lote: "+numLote;
+        return "fecha de vencimiento: "+this.fechaVencimiento+"\n num lote: "+this.numLote;
     }
 }
