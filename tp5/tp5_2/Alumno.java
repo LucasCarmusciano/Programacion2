@@ -17,6 +17,10 @@ public class Alumno {
         ArrayList<String> c = new ArrayList<>(this.cualidades);
         return c;
     }
+    public ArrayList<Alumno> getFamiliares(){
+        ArrayList<Alumno> f = new ArrayList<>(this.familiares);
+        return f;
+    }
 
     public void addFamiliar(Alumno f){
         familiares.add(f);
@@ -28,5 +32,14 @@ public class Alumno {
 
     public String toString(){
         return this.nombre;
+    }
+
+    public boolean permitido(Casa casa){
+        for(int i=0; i<casa.getCualidadesNecesarias().size(); i++){
+            if(this.cualidades.contains(casa.getCualidadesNecesarias().get(i))){
+                return false;
+            }
+        }
+        return true;
     }
 }
