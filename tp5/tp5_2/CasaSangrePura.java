@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class CasaSangrePura extends Casa {
     public CasaSangrePura(String nombre, int cantMaxAlumnos, Alumno fundador){  //necesario para poder agregar a gente que sea de su familia
         super(nombre, cantMaxAlumnos);
-        this.cualidadesNecesarias = new ArrayList<>();
         this.listaAlumnos = new ArrayList<>();
         this.listaAlumnos.add(fundador);
     }

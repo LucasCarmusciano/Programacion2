@@ -6,6 +6,8 @@ public class PruebaSombrero {
         Casa c1 = new Casa("Slytherin", 5);
         CasaSangrePura c2 = new CasaSangrePura("Sanguinea", 6, fundador);
         
+        c2.addEnemigo(c1);
+
         c1.addCualidad("Sabiduria");
         c1.addCualidad("Fuerza");
         
@@ -41,8 +43,6 @@ public class PruebaSombrero {
         c2.addAlumno(a1);
         c2.addAlumno(a2);
 
-        System.out.println(c2);
-
-
+        System.out.println(c2); //solo permite a Jesus porque Lucas y Claudio tienen cualidades del enemigo
     }
 }

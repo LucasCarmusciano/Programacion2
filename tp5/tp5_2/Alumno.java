@@ -35,8 +35,13 @@ public class Alumno {
     }
 
     public boolean permitido(Casa casa){
+        for(int e=0; e<casa.getCasasEnemigas().size(); e++){
+            if(this.permitido(casa.getCasasEnemigas().get(e))){    //Que no sea compatible con sus casas enemigas
+                return false;
+            }
+        }
         for(int i=0; i<casa.getCualidadesNecesarias().size(); i++){
-            if(this.cualidades.contains(casa.getCualidadesNecesarias().get(i))){
+            if(!this.cualidades.contains(casa.getCualidadesNecesarias().get(i))){
                 return false;
             }
         }
