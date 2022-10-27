@@ -12,7 +12,6 @@ public abstract class EntidadTrabajo {
     public String getNombre() {
         return nombre;
     }
-    abstract int getCantEmpleados();
     abstract int getCantMensajes();
     abstract void addNotificacion(Notificacion n);
     abstract ArrayList<Empleado> getEmpleados();
