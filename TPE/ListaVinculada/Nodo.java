@@ -1,10 +1,10 @@
 package ListaVinculada;
 
 public class Nodo {
-    private Comparable elemento;
+    private Object elemento;
     private Nodo siguiente;
 
-    public Nodo(Comparable elemento) {
+    public Nodo(Object elemento) {
         this.elemento = elemento;
         this.siguiente = null;
     }
@@ -12,7 +12,7 @@ public class Nodo {
     public void setSiguiente(Nodo n){
         this.siguiente = n;
     }
-    public void setElemento(Comparable e){
+    public void setElemento(Object e){
         this.elemento = e;
     }
 
@@ -20,7 +20,8 @@ public class Nodo {
         return this.siguiente;
     }
 
-    public Comparable getElemento(){
+    public Object getElemento(){
         return this.elemento;
     }
+    
 }
