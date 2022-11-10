@@ -1,46 +1,56 @@
 package ListaVinculada;
 
+import java.util.Comparator;
 import java.util.Iterator;
 
-public class ListaEnlazada implements Iterable<Object>{
+public class ListaEnlazada implements Iterable<Nodo>{
     private Nodo cabeza;
     private int size;
+    private Comparator<Object> comparador;
 
-    public ListaEnlazada(Nodo cabeza) {
+    public ListaEnlazada(Nodo cabeza, Comparator<Object> comparador) {
         this.cabeza = cabeza;
         this.size = 1;
+        this.comparador = comparador;
     }
 
     public Nodo getCabeza() {
         return cabeza;
     }
     
-    public void addNodo(Object o){ //para prboar
+    public void addNodo(Object o){
         Nodo nuevoNodo = new Nodo(o);
         nuevoNodo.setSiguiente(this.cabeza);
         this.cabeza = nuevoNodo;
+        this.ordenar();
         this.size++;
     }
 
+    public void setComparador(Comparator<Object> comparador){
+        this.comparador = comparador;
+    }
     
 
-    // private void ordenar(){
-    //     Nodo aux = this.cabeza;
-    //     Nodo actual;
-    //     Object temp;
-    //     while(aux.getSiguiente()!=null){
-    //         actual = aux.getSiguiente();
-    //         while(actual!=null){
-    //             if((aux.getElemento())>(actual.getElemento())){
-    //                 temp = aux.getElemento();
-    //                 aux.getElemento() = actual.getElemento();
-    //                 actual.getElemento() = temp;
-    //             }
-    //             actual = actual.getSiguiente();
-    //         }
-    //         aux.getSiguiente();
-    //     }
-    // }
+    private void ordenar(){
+        Nodo aux = this.cabeza;
+        Nodo actual;
+        Object temp;
+        while(aux.getSiguiente()!=null){
+            actual = aux.getSiguiente();
+            while(actual!=null){
+                System.out.println(aux.getElemento());
+                System.out.println(actual.getElemento());
+
+                if((this.comparador.compare(aux.getElemento(), actual.getElemento()))>=0){
+                    temp = aux.getElemento();
+                    aux.setElemento(actual.getElemento());
+                    actual.setElemento(temp);
+                }
+                actual = actual.getSiguiente();
+            }
+            aux = aux.getSiguiente();
+        }
+    }
 
     
     public int size(){
@@ -101,14 +111,15 @@ public class ListaEnlazada implements Iterable<Object>{
 
     
     @Override
-    public Iterator<Object> iterator() {
+    public Iterator<Nodo> iterator() {
         return new Iterador();
     }
 
-    private class Iterador implements Iterator<Object>{
+    private class Iterador implements Iterator<Nodo>{
         private Nodo pos;
         public Iterador(){
-            this.pos = cabeza;
+            this.pos = new Nodo(null);
+            this.pos.setSiguiente(cabeza);
         }
 
         @Override
@@ -117,7 +128,7 @@ public class ListaEnlazada implements Iterable<Object>{
         }
 
         @Override
-        public Object next() {
+        public Nodo next() {
             pos = pos.getSiguiente();
             return pos;
         }
