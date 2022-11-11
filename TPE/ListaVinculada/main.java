@@ -28,7 +28,7 @@ public class main {
         Comparator<Object> compI1 = new ComparadorIntegerAsc();
         Comparator<Object> compI2 = new ComparadorIntegerDesc();
 
-        ListaEnlazada lista = new ListaEnlazada(n1, compI1);
+        ListaEnlazada lista = new ListaEnlazada(n1, compI2);
         lista.addNodo(b);
         lista.addNodo(c);
         lista.addNodo(d);

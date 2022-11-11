@@ -38,9 +38,6 @@ public class ListaEnlazada implements Iterable<Nodo>{
         while(aux.getSiguiente()!=null){
             actual = aux.getSiguiente();
             while(actual!=null){
-                System.out.println(aux.getElemento());
-                System.out.println(actual.getElemento());
-
                 if((this.comparador.compare(aux.getElemento(), actual.getElemento()))>=0){
                     temp = aux.getElemento();
                     aux.setElemento(actual.getElemento());
